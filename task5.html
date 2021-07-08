@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task5</title>
+</head>
+<body>
+<script>
+
+    /**
+     * задание 5
+     */
+    "use strict";
+
+
+    function multiplication(a, b) {
+        return a * b;
+    }
+
+    function split(a, b) {
+        return a / b;
+    }
+
+    function sum(a, b) {
+        return a - b;
+    }
+
+    function differ(a, b) {
+        return a + b;
+    }
+
+    function mathOperation(arg1, arg2, operation) {
+
+        switch (operation) {
+            case "*":
+                return multiplication(arg1, arg2);
+
+            case "/":
+                return split(arg1, arg2);
+
+
+            case "-":
+                return sum(arg1, arg2);
+
+            case "+":
+                return differ(arg1, arg2);
+
+        }
+
+    }
+
+    alert(mathOperation(5, 6, "*"));
+    alert(mathOperation(5, 6, "/"));
+    alert(mathOperation(5, 6, "-"));
+    alert(mathOperation(5, 6, "+"));
+
+
+</script>
+
+</body>
+</html>
