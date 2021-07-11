@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson4</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function Product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+        Product.prototype.make25PercenDiscount= function (){
+            this.price = this.price*0.75;
+
+        };
+
+        const productWithDiscount = new Product("name1", 10);
+
+        productWithDiscount.make25PercenDiscount();
+    console.log(productWithDiscount);
+
+
+
+
+
+</script>
+</body>
+</html>
