@@ -34,14 +34,26 @@
     2. В зависимости от того по какому .nav-link кликнули нужно чтобы менялся текст
     в .text, соответствующие тексты вы найдете в app.js
     -->
-    <script>
-        let navLinks = document.getElementsByClassName("nav-link");
-        navLinks.addEventListener("click", function (event) {
-            
-        })
-    </script>
-    <script src="app.js">
+<!--    <script>-->
+<!--        let navLinks = document.getElementsByClassName("nav-link");-->
 
+<!--            for(let i=0; i<navLinks.length; i++){-->
+<!--                navLinks[i].addEventListener("click", function (event) {-->
+<!--                if (!navLinks[i].classList.contains("active")){-->
+
+<!--                    navLinks[i].classList.add("active");-->
+<!--                    navLinks[i-1].classList.remove("active");-->
+<!--                }-->
+
+<!--            })-->
+
+<!--        }-->
+<!--    </script>-->
+    <script src="app.js">
+        let navLinksList = document.getElementsByClassName("nav-link");
+        for (let i = 0; i < navLinksList.length; i++) {
+            navLinksList[i].addEventListener("clickHandler", clickHandler)
+        }
 
     </script>
 </body>

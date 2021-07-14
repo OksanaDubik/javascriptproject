@@ -24,9 +24,15 @@
     3. Чтобы анимировать перемещение .message используйте стиль transform
     как здесь https://webref.ru/css/value/translatey
     -->
-
+    <audio src="notification.mp3" id="audio"></audio>
     <script>
-        
+
+        let audioEl = document.getElementById("audio");
+        window.onclick = function (){
+            audioEl.play()
+        }
+        let messageText = document.getElementsByClassName("message");
+        messageText.clientHeight
     </script>
 </body>
 
