@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson4</title>
+</head>
+<body>
+<script>
+    "use strict";
+    function Post(author, text, date) {
+        this.author = author;
+        this.text = text;
+        this.date = date;
+    }
+
+    Post.prototype.edit = function (text) {
+        this.text = text;
+    }
+
+    function AttachedPost(author, text, date) {
+        Post.call(this, author, text, date);
+        this.highlighted = false;
+    }
+
+    AttachedPost.prototype = Object.create(Post.prototype);
+    AttachedPost.prototype.constructor = AttachedPost;
+
+    AttachedPost.prototype.makeTextHighlighted = function () {
+        this.highlighted = true;
+    }
+    let post = new Post("Igor", "ilowe", "05.05.05 ");
+    console.log(post);
+    post.edit("inelove")
+    console.log(post);
+
+    let attachedPost =new AttachedPost("Tolstoy", "qest", "03.07.2021");
+    console.log(attachedPost);
+    attachedPost.edit("kkkkkkkkkkkk");
+    console.log(attachedPost);
+    attachedPost.makeTextHighlighted();
+    console.log(attachedPost);
+
+</script>
+</body>
+</html>
