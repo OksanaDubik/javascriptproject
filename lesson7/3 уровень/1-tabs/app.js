@@ -11,9 +11,11 @@ const texts = {
     2.1 Переберите полученную коллекцию, например с помощью forEach, и каждой ссылке назначьте
     обработчик клика функцию clickHandler.
 */
-let linkText = document.querySelector("const");
-let navLinksList = document.getElementsByClassName("nav-link");
-
+let text = document.querySelector(".text")
+let navLinksList = document.querySelectorAll("a");
+for (let i = 0; i < navLinksList.length; i++) {
+    navLinksList[i].addEventListener("click", clickHandler)
+}
 
 /**
  * Обработчик клика по .nav-link
@@ -34,15 +36,19 @@ function clickHandler(event) {
  * @param {MouseEvent} event
  */
 function changeActiveClass(event) {
-    for (let i = 0; i < navLinksList.length; i++) {
+    let arrayStr = event.currentTarget.innerText.split(" ");
+    let index = arrayStr[1] - 1;
+    if (!navLinksList[index].classList.contains("active")) {
 
-            if (!navLinksList[i].classList.contains("active")) {
-
-                navLinksList[i].classList.add("active");
-                navLinksList[i - 1].classList.remove("active");
-            }
-
+        navLinksList[index].classList.add("active");
+        if (index > 0) {
+            navLinksList[index - 1].classList.remove("active");
+        }
+        if (index === 0) {
+            navLinksList[navLinksList.length - 1].classList.remove("active");
+        }
     }
+
 }
 
 /**
@@ -52,11 +58,17 @@ function changeActiveClass(event) {
  * @param {MouseEvent} event
  */
 function changeText(event) {
-    for (let i = 0; i < navLinksList.length; i++) {
-       let text= navLinksList[i].textContent;
-console.log(text);
+    let arrayStr = event.currentTarget.innerText.split(" ");
+    let index = arrayStr[1] ;
 
+
+    if (index === "1") {
+        text.innerHTML = texts.text1;
     }
-
-
+    if (index === "2") {
+        text.innerHTML = texts.text2;
+    }
+    if (index === "3") {
+        text.innerHTML = texts.text3;
+    }
 }
